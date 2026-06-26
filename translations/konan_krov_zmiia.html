@@ -1,42 +1,91 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="uk">
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="../favicon.ico">
         <title>Конан: Кров змія • Іван Печериця</title>
         
         <style>
+            /* Stygian Earth & Stone Theme */
+            :root {
+                --bg-color: #2a2825;       /* Warm, dusty slate gray */
+                --text-main: #d1c7b7;      /* Aged parchment/stone off-white */
+                --accent: #8f9c6d;         /* Mossy, earthy green */
+                --accent-hover: #c0c0c0;   /* Polished silver highlight */
+                --border-color: #5c564d;   /* Rough stone divider color */
+            }
+
             body {
-                background-color: burlywood;
-                max-width: 550px;
+                background-color: var(--bg-color);
+                color: var(--text-main);
+                font-family: 'Ubuntu', sans-serif;
+                max-width: 650px;
                 margin: 0 auto;
-                padding: 20px;
+                padding: 40px 20px;
+                line-height: 1.7;
+                animation: fadeIn 0.8s ease-out;
             }
-            img {
-                width: 50%;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 5%;
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
             }
-            ul {padding-left: 0; margin-left: 0;}
-            li {
-                font-family: ubuntu;
-                font-size: 12px;
+
+            h1, h2 {
+                text-align: center;
+                font-family: 'Ubuntu', sans-serif;
+                color: #e8e1d6;
             }
+
+            h1 { font-weight: 700; font-size: 2rem; margin-bottom: 5px; }
+            h2 { font-weight: 400; color: var(--accent); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; }
+
             p {
-                font-family: ubuntu;
                 text-align: justify;
-                text-indent: 25px;
-                margin: 0;
-                padding: 5px;
+                text-indent: 30px;
+                margin: 0 0 10px 0;
+                hyphens: auto;
             }
-            h1, h2 {font-family: ubuntu; text-align: center;}
-            progress {width: 100%;}
-            span {color: grey;}
+
+            h2 + p { text-indent: 0; }
+
+            a {
+                color: var(--accent);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: var(--accent-hover);
+            }
+
+            /* Footnote Styling */
+            ol {
+                margin-top: 40px;
+                font-size: 0.9rem;
+                color: #b0a89d;
+                padding-left: 20px;
+            }
+
+            ol li {
+                margin-bottom: 10px;
+            }
+
+            hr {
+                border: 0;
+                height: 1px;
+                background: linear-gradient(to right, transparent, var(--border-color), transparent);
+                margin: 50px 0 35px 0;
+            }
+
+            .nav-links {
+                text-align: center;
+                text-indent: 0;
+                font-weight: 500;
+                margin-top: 20px;
+            }
         </style>
     </head>
 
@@ -101,7 +150,7 @@
 
         <p>Конан пильно роздивився стан бійців. Червоне вино вже пролилося. Супротивник розсік Брокасу щоку — кров стікала по обличчю та навіть бризкала, коли той швидко рухався. Саморієць же мав неглибокий поріз на лівому передпліччі. Це вже не бійка з нудьги. Перша кров могла би вгамувати їхню пиху, але жоден із бійців не виказував ніяких ознак того, що готовий зупинятися. Чоловіки були налаштовані серйозно.</p>
 
-        <hr> <!-- 000000000000000000000000000000000000000000000000000000 -->
+        <hr>
 
         <ol>
             <li>Пригоди Конана відбуваються у вигадану Робертом Говардом Гіборійську еру. Цей період історії Землі, як зазначав сам Говард, старший за відомий нам Стародавній світ, та все ж молодший за затоплення Атлантиди (див. прим. 53). Стіґія — одна з великих країн Гіборійської ери, ім’я якої походить від назви відомої нам з міфів річки Стікс. У світі книг Говарда, Стікс — це справжня ріка, що повністю омиває північну та східну границі Стиґії. <i>— Тут і далі прим. пер., якщо не зазначено інше.</i></li>
@@ -120,14 +169,10 @@
             <li>Шадізар — велике місто на сході Самори. Колишній релігійний центр країни, що загруз у тисячі гріхів. Храми перетворилися на борделі, притони та гральні доми, а саме місто отримало титул Шадізара Нечестивого.</li>
         </ol>
         
-        <hr> <!-- 000000000000000000000000000000000000000000000000000000 -->
-        
-        <p style="text-align: center">
+        <p class="nav-links">
             [ <a href="../">додому</a> ]
             •
             [ <a href="https://vivat.com.ua/product/konan-krov-zmiia/">книжка на сайті видавництва</a> ]
         </p>
-        
     </body>
-
 </html>
