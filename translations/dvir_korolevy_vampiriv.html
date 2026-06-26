@@ -3,29 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Added the italic (ital) weight so the <i> tags in your text render smoothly -->
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="../favicon.ico">
         <title>Двір Королеви Вампірів • Іван Печериця</title>
         
         <style>
-            /* Classical Vampire Theme Variables */
             :root {
-                --bg-color: #0f0a0a;       /* Deepest blood-shadow black */
-                --text-main: #e5d8d8;      /* Pale, bloodless off-white for readability */
-                --accent: #d92626;         /* Deep but visible blood red */
-                --accent-hover: #ff4d4d;   /* Fresh red for hover states */
-                --border-color: #4a1c1c;   /* Dark crimson for dividers */
+                --bg-color: #0f0a0a;
+                --text-main: #e5d8d8;
+                --accent: #d92626;
+                --accent-hover: #ff4d4d;
+                --border-color: #4a1c1c;
             }
 
             body {
                 background-color: var(--bg-color);
                 color: var(--text-main);
                 font-family: 'Ubuntu', sans-serif;
-                max-width: 650px; /* Slightly wider than 550px for better paragraph flow */
+                max-width: 650px;
                 margin: 0 auto;
                 padding: 40px 20px;
-                line-height: 1.7; /* Generous line height for long-form reading */
+                line-height: 1.7;
                 animation: fadeIn 0.8s ease-out;
             }
 
@@ -45,7 +43,6 @@
                 font-size: 2rem;
                 letter-spacing: 1px;
                 color: var(--text-main);
-                /* Gives the main title a very subtle red glow */
                 text-shadow: 0 2px 4px rgba(217, 38, 38, 0.15); 
             }
 
@@ -63,11 +60,9 @@
                 text-align: justify;
                 text-indent: 30px;
                 margin: 0 0 10px 0;
-                /* Allows the browser to automatically hyphenate words for better justified text */
                 hyphens: auto; 
             }
 
-            /* Professional typesetting: no indent on the very first paragraph of a chapter */
             h2 + p {
                 text-indent: 0;
             }
@@ -92,7 +87,7 @@
 
             .nav-links {
                 text-align: center;
-                text-indent: 0; /* Removes the indent so links are perfectly centered */
+                text-indent: 0;
                 font-weight: 500;
                 margin-top: 20px;
             }
