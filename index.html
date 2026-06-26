@@ -1,84 +1,224 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="uk">
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <title>Іван Печериця</title>
         
         <style>
+            :root {
+                --bg-color: #121212;
+                --text-main: #e2e8f0;
+                --text-muted: #a0aec0;
+                --accent: #63b3ed;
+                --accent-hover: #90cdf4;
+                --card-bg: #1e1e1e;
+                --card-hover: #2a2a2a;
+                --progress-bg: #333333;
+            }
+
             body {
-                background-color: lightyellow;
-                max-width: 550px;
+                background-color: var(--bg-color);
+                color: var(--text-main);
+                font-family: 'Ubuntu', sans-serif;
+                max-width: 800px;
                 margin: 0 auto;
-                padding: 20px;
+                padding: 40px 20px;
+                line-height: 1.6;
+                animation: fadeIn 0.8s ease-out;
             }
-            img {
-                width: 50%;
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            h1, h2 {
+                text-align: center;
+                color: var(--text-main);
+            }
+
+            h1 { margin-bottom: 20px; font-weight: 700; }
+            h2 { margin-bottom: 25px; font-weight: 500; }
+
+            img.avatar {
+                width: 140px;
+                height: 140px;
+                object-fit: cover;
                 display: block;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 5%;
+                margin: 0 auto 25px;
+                border-radius: 50%;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+                transition: transform 0.3s ease;
             }
-            ul {padding-left: 0; margin-left: 0;}
-            li {font-family: ubuntu;}
-            h1, h2, p {font-family: ubuntu; text-align: center;}
-            progress {width: 100%;}
-            span {color: grey;}
+
+            img.avatar:hover {
+                transform: scale(1.05);
+            }
+
+            .nav-links {
+                text-align: center;
+                font-weight: 500;
+                font-size: 1.1rem;
+            }
+
+            a {
+                color: var(--accent);
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+
+            a:hover {
+                color: var(--accent-hover);
+            }
+
+            hr {
+                border: 0;
+                height: 1px;
+                background: linear-gradient(to right, transparent, #4a5568, transparent);
+                margin: 35px 0;
+            }
+
+            ul {
+                padding-left: 0; 
+                margin-left: 0;
+                list-style: none;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            @media (min-width: 600px) {
+                ul {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            li {
+                background: var(--card-bg);
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            li:hover {
+                background: var(--card-hover);
+                transform: translateY(-2px);
+            }
+
+            progress {
+                width: 100%;
+                height: 8px;
+                margin-top: 15px;
+                border-radius: 4px;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            progress::-webkit-progress-bar {
+                background-color: var(--progress-bg);
+                border-radius: 4px;
+            }
+
+            progress::-webkit-progress-value {
+                background: linear-gradient(90deg, #4a90e2, #63b3ed);
+                border-radius: 4px;
+            }
+
+            progress::-moz-progress-bar {
+                background: linear-gradient(90deg, #4a90e2, #63b3ed);
+                border-radius: 4px;
+            }
+
+            .update-date {
+                text-align: right;
+                color: var(--text-muted);
+                font-size: 0.9rem;
+                margin-top: 15px;
+            }
+
+            .contact-info {
+                text-align: center;
+                background: var(--card-bg);
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            }
         </style>
     </head>
 
     <body>
         <h1>Іван Печериця</h1>
-        <img src="https://images.gr-assets.com/users/1720593040p8/149747069.jpg" alt="*my avatar*" title="*my avatar*">
+        <img class="avatar" src="./avatar.jpg" alt="my avatar" title="my avatar">
         
-        <p>
+        <p class="nav-links">
             [ <a href="./bio">про мене</a> ]
             •
             [ <a href="./essays/list">есеї</a> ]
         </p>
 
-        <hr> <!-- 000000000000000000000000000000000000000000000000000000 -->
+        <hr>
 
         <h2>Переклади</h2>
         
         <ul>
-            <li> <a href="https://www.goodreads.com/book/show/60338559" target="_blank">Court of the Vampire Queen</a> — <a href="https://www.goodreads.com/book/show/229140695">Двір Королеви Вампірів</a> — <a href="./translations/dvir_korolevy_vampiriv">фрагмент</a> </li>
+            <li> 
+                <div>
+                    <a href="https://www.goodreads.com/book/show/60338559" target="_blank">Court of the Vampire Queen</a> — <a href="https://www.goodreads.com/book/show/229140695">Двір Королеви Вампірів</a> — <a href="./translations/dvir_korolevy_vampiriv">фрагмент</a>
+                </div>
                 <progress value="1"></progress>
-                <br><br>
+            </li>
             
-            <li> <a href="https://www.goodreads.com/book/show/60715892" target="_blank">Conan: Blood of the Serpent</a> — <a href="https://www.goodreads.com/book/show/245034386">Конан: Кров змія</a> — <a href="./translations/konan_krov_zmiia">фрагмент</a> </li>
+            <li> 
+                <div>
+                    <a href="https://www.goodreads.com/book/show/60715892" target="_blank">Conan: Blood of the Serpent</a> — <a href="https://www.goodreads.com/book/show/245034386">Конан: Кров змія</a> — <a href="./translations/konan_krov_zmiia">фрагмент</a>
+                </div>
                 <progress value="1"></progress>
-                <br><br>
+            </li>
             
-            <li> <a href="https://www.goodreads.com/book/show/367367" target="_blank">Myth Conception</a> — НекМІТливіть </li>
+            <li> 
+                <div>
+                    <a href="https://www.goodreads.com/book/show/367367" target="_blank">Myth Conception</a> — НекМІТливіть
+                </div>
                 <progress value="1"></progress>
-                <br><br>
+            </li>
             
-            <li> <a href="https://www.goodreads.com/book/show/12499290" target="_blank">The Blinding Knife</a> — Сліпучий Ніж </li>
+            <li> 
+                <div>
+                    <a href="https://www.goodreads.com/book/show/12499290" target="_blank">The Blinding Knife</a> — Сліпучий Ніж
+                </div>
                 <progress value="1259709" max="1438928"></progress>
-                <br><br>
+            </li>
 
-            <li> <a href="https://www.goodreads.com/book/show/223532773" target="_blank">Loving a Vampire Is Total Chaos</a> — «Кохати вампіра — це суцільний хаос» </li>
+            <li> 
+                <div>
+                    <a href="https://www.goodreads.com/book/show/223532773" target="_blank">Loving a Vampire Is Total Chaos</a> — «Кохати вампіра — це суцільний хаос»
+                </div>
                 <progress value="1"></progress>
-                <br><br>
+            </li>
 
-            <li> <a href="https://www.goodreads.com/book/show/237765587" target="_blank">Loving a Witch Is Totally Foolish</a> — «Кохати відьму — це суцільна дурість» </li>
-                <progress value="0" max="580000"></progress>
-                <br><br>
+            <li> 
+                <div>
+                    <a href="https://www.goodreads.com/book/show/237765587" target="_blank">Loving a Witch Is Totally Foolish</a> — «Кохати відьму — це суцільна дурість»
+                </div>
+                <progress value="0" max="583743"></progress>
+            </li>
         </ul>
         
-        <p style="text-align: right">Актуально на 20 червня 2026</p>
+        <p class="update-date">Актуально на 26 червня 2026</p>
         
-        <hr> <!-- 000000000000000000000000000000000000000000000000000000 -->
+        <hr>
         
-        <p>
+        <p class="contact-info">
             telegram: <a href="https://t.me/sunopako">@sunopako</a>
             <br>
             email: <a href="mailto:snpk@duck.com">snpk@duck.com</a>
         </p>
     </body>
-
 </html>
